@@ -1,55 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        h1{
-            color:#000000
-        }
-        h2{
-            color:#4a4545
-        }
-        li{
-            color: rgb(10, 113, 113);
-        }
-    </style>
 </head>
-<body bgcolor="pink">
-    <!--<h1>字体颜色是<font color="#0000dd">这样的</font></h1>-->
-    <h1>姓名:</h1>
-    <h2>fmq</h2>
-    <h1>学号</h1>
-    <h2>22057027</h2>
-    <h1>学习经历</h1>
-    <h2>本科生</h2>
-    <h1>这是我的偶像</h1>
-    <img src="aaa.jpeg" alt="这是我的偶像" width="200" height=""/>
-    <h1>这是我的宝宝</h1>
-    <img src="bb.jpg" alt="这是我的宝宝" width="200" height="">
-    <h1>兴趣爱好</h1>
-    <ul>
-        <li>音乐</li>
-        <li>旅游</li>
-        <li>看书</li>
-        <li>学习和探索自我</li>
-        <li>...</li>
-    </ul>
-    <h1>出生年月</h1>
-    <table border="1" width="200">
-        <th>
-            时间
-        </th>
-        <th>
-            地点
-        </th>
-        <tr>
-            <td class="">2004.5.16</td>
-            <td>上海市松江区</td>
-        </tr>
-    </table>
+<style>
+    .main {
+        width: 720px;
+        height: 720px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        box-shadow: 20px 20px 20px #babbbe;
+    }
 
+    .head {
+        background-color: #849eec;
+        height: 36px;
+        width: auto;
+        box-shadow: 10px 10px 10px #7181b1;
+    }
 
+    .container {
+        width: 700px;
+        padding-left: 15px;
+        height: auto;
+        margin:0,auto;
+        padding:30px;
+    }
+
+    .container1 {
+        height: 52px;
+       
+    }
+
+    .title {
+        background-color: #335ddc;
+        color: #ebebeb;
+        width: 152px;
+        height: 25px;
+        line-height: 25px;
+        padding-left: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px #849eec;
+    }
+
+    .title1 {
+        background-color: #335ddc;
+        color: #ebebeb;
+        margin: 0 auto;
+        height: 36px;
+        width: 120px;
+        text-align: center 
+        line-height: 36px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="title1">个人简历</div>
+        </div>
+        <div class="container1"></div>
+        <div class="part1">
+            <div class="title">基本信息</div>
+            <div class="container"> 
+                姓名：凡美琪<br>
+                学号：22057027<br>
+                籍贯：河南信阳<br></div>
+        </div>
+        <div class="part2">
+            <div class="title">教育经历</div>
+            <div class="container">
+                2022.9月至今，就读于上海对外经贸大学<br>
+                主修课程：管理学；微观经济学；运筹学；信息技术类课程；数据分析类课程等<br>
+                GPA:3.4/4.0，专业排名前10%
+            </div>
+        </div>
+        <div class="part3">
+            <div class="title">组织经历</div>
+            <div class="container">
+                积极参与学生会各项活动，与其他干事一起参与各类学校活动的策划<br>
+                负责学校活动的方案制作，成功举办多次大型活动<br>
+                利用寒暑假从事家教，社会兼职，积极参与学校组织的公益活动等
+            </div>
+        </div>
+        <div class="part4">
+            <div class="title">技能特长</div>
+            <div class="container">
+                语言技能：通过大学英语四级<br>
+                专业技能：参与相关专业比赛并获奖项<br>
+                计算机技能：熟练掌握word、excel、ppt等日常办公软件
+            </div>
+        </div>
+
+    </div>
 </body>
+
 </html>
