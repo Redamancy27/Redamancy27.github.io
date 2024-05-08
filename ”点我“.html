@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #thebox {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(255, 0, 0);
+    }
+</style>
+
+<body>
+    <div id="thebox" ></div>
+    <button id="thebutton" >你划一下试试呢</button>
+</body>
+<script>
+    let thebutton = document.getElementById("thebutton")
+    thebutton.onmousemove = function () {
+        let thebox = document.getElementById("thebox");
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        thebox.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+    }
+</script>
+
+</html>
