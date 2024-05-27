@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+.slider-container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  border: 4px solid black;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.control-btn {
+  background-color: #ccc;
+  border: none;
+  padding: 5px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.control-btn.active {
+  background-color: red;
+}
+</style>
+<body>
+  <div class="slider-container">
+    <div class="slides">
+      <img src="111.jpg" alt="Image 1" class="slide active">
+      <img src="222.jpg" alt="Image 2" class="slide">
+      <img src="333.jpg" alt="Image 3" class="slide">
+      <!-- 更多图片 -->
+    </div>
+    <button class="arrow prev">&lt;</button>
+    <button class="arrow next">&gt;</button>
+    
+    <div class="controls">
+      <button class="control-btn" data-index="0"></button>
+      <button class="control-btn" data-index="1"></button>
+      <button class="control-btn" data-index="2"></button>
+      <!-- 更多控制按钮 -->
+    </div>
+  </div>
+  
+  
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slide');
+  const controlBtns = document.querySelectorAll('.control-btn');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function setActiveSlide(index) {
+    // Remove active classes
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      controlBtns[i].classList.remove('active');
+    });
+
+    // Set active slide
+    slides[index].classList.add('active');
+    controlBtns[index].classList.add('active');
+  }
+
+  // Initial active slide
+  setActiveSlide(currentIndex);
+
+  // Next slide
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    setActiveSlide(currentIndex);
+  });
+
+  // Previous slide
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    setActiveSlide(currentIndex);
+  });
+
+  // Control buttons
+  controlBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      currentIndex = index;
+      setActiveSlide(currentIndex);
+    });
+  });
+
+  // Auto-switch slides every 3 seconds
+  setInterval(() => {
+    nextBtn.click();
+  }, 3000);
+});
+</script>
+</html>
